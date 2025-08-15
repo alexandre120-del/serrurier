@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Serrurerie Rapide — serrurier à Votre ville</title>
+  <meta name="description" content="serrurier à Votre ville : interventions rapides, installation et dépannage. Site vitrine démo." />
+  <style>
+    :root{
+      --bg:#f8fbff; --text:#0b1320; --muted:#475569; --card:#ffffff; --border:#e5e7eb;
+      --brand:#2563eb; --brand-700:#1d4ed8; --accent:#60a5fa; --accent-700:#3b82f6;
+      --shadow: 0 12px 30px rgba(2,6,23,.10);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:white;font-weight:900;box-shadow:var(--shadow)}
+    .nav a{opacity:.9;padding:10px 12px;border-radius:10px}
+    .nav a:hover{background:#00000007}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch;margin-top:22px}
+    @media (max-width: 980px){.hero{grid-template-columns:1fr}}
+    .hero .pitch{background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);padding:28px}
+    .hero h1{font-size:clamp(30px,5vw,46px);line-height:1.12;margin:0 0 10px}
+    .hero p.lead{font-size:clamp(15px,2.1vw,19px);color:var(--muted);margin:0 0 16px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;border:1px solid var(--border);font-weight:800;transition:.2s;cursor:pointer}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--accent);color:#1f2937;border-color:transparent}
+    .btn-primary:hover{background:var(--accent-700);color:#fff}
+    .btn-ghost{background:#fff;color:var(--text)}
+    .hero .photo{border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);position:relative;background:#fff}
+    .hero .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .icons{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+    @media (max-width: 880px){.icons{grid-template-columns:repeat(2,1fr)}}
+    .chip{background:#ffffff;border:1px solid var(--border);border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:center;box-shadow:var(--shadow)}
+    .chip .i{width:30px;height:30px;border-radius:8px;background:#f1f5f9;display:grid;place-items:center}
+    .section{margin-top:34px}
+    .section h2{margin:0 0 10px;font-size:26px}
+    .gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+    .gallery figure{margin:0}
+    .gallery img{width:100%;height:100%;object-fit:cover;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow);background:#fff}
+    .gallery .tall{grid-row:span 2}
+    @media (max-width: 980px){.gallery{grid-template-columns:1fr 1fr} .gallery .tall{grid-row:auto}}
+    @media (max-width: 580px){.gallery{grid-template-columns:1fr}}
+    .cards{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 1100px){.cards{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 680px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:18px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{margin:0;color:#64748b}
+    .reviews{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 980px){.reviews{grid-template-columns:1fr}}
+    .review{background:#ffffff;border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:14px}
+    .stars{color:#f59e0b;font-size:18px;margin-bottom:6px}
+    form{display:grid;gap:12px;margin-top:12px}
+    label{font-weight:700}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:#ffffff;color:var(--text)}
+    textarea{min-height:120px;resize:vertical}
+    .form-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-accent{background:var(--brand);color:white;border:1px solid var(--brand)}
+    .btn-outline{background:#ffffff;color:var(--text);border:1px solid var(--border)}
+    footer{margin-top:40px;padding:22px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#475569}
+    .sticky-cta{position:fixed;left:0;right:0;bottom:16px;display:flex;justify-content:center;pointer-events:none}
+    .sticky-cta .wrap{display:flex;gap:10px;background:#fffffff2;border:1px solid var(--border);border-radius:14px;padding:8px;box-shadow:var(--shadow);backdrop-filter:blur(6px);pointer-events:auto}
+    .sticky-cta .wrap a{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:10px;font-weight:800;border:1px solid var(--border)}
+    .sticky-cta .whatsapp{background:var(--brand);color:white;border-color:var(--brand)}
+    .sticky-cta .call{background:#111827;color:#ffffff;border-color:#111827}
+    .floating-space{height:96px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">SE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800">Serrurerie Rapide</div>
+          <div style="color:#64748b;font-weight:600;font-size:13px">serrurier — interventions rapides</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#galerie">Photos</a>
+        <a href="#services">Services</a>
+        <a href="#avis">Avis</a>
+        <a href="#devis">Devis</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="pitch">
+        <h1>Serrurier à Votre ville — Intervention rapide & travail soigné</h1>
+        <p class="lead">Dépannage, installation et mise aux normes. Devis clair, déplacements rapides, service garanti.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:+33634086084">📞 Appeler maintenant</a>
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://wa.me/33634086084?text=Bonjour%2C%20j%27ai%20besoin%20d%27une%20intervention%20serrurier%20%E2%80%94%20Votre ville.">💬 WhatsApp</a>
+          <a class="btn btn-ghost" href="#devis">📩 Demande de devis</a>
+        </div>
+        <div class="icons">
+          <div class="chip"><div class="i">⏱️</div><div>Intervention rapide 7j/7</div></div>
+          <div class="chip"><div class="i">🔒</div><div>Travail garanti</div></div>
+          <div class="chip"><div class="i">📍</div><div>Votre ville et alentours</div></div>
+          <div class="chip"><div class="i">⭐</div><div>Avis clients 5/5</div></div>
+        </div>
+      </div>
+
+      <figure class="photo">
+        <img src="serr_hero.jpg" alt="Serrurier — photo terrain">
+      </figure>
+    </section>
+
+    <section id="galerie" class="section">
+      <h2>Photos de nos interventions</h2>
+      <div class="gallery">
+        <figure class="tall"><img src="serr1.jpg" alt="Intervention"></figure>
+        <figure><img src="serr2.jpg" alt="Installation"></figure>
+        <figure><img src="serr3.jpg" alt="Mise aux normes"></figure>
+        <figure><img src="serr4.jpg" alt="Dépannage"></figure>
+        <figure><img src="serr5.jpg" alt="Maintenance"></figure>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <div class="cards">
+        <div class="card"><h3>Dépannage urgent</h3><p>Intervention rapide sur serruriers en panne ou défaillantes.</p></div>
+        <div class="card"><h3>Installation</h3><p>Pose et remplacement d'équipements professionnels, conformes aux normes.</p></div>
+        <div class="card"><h3>Entretien & prévention</h3><p>Maintenance régulière pour éviter les pannes et prolonger la durée de vie.</p></div>
+      </div>
+    </section>
+
+    <section id="avis" class="section">
+      <h2>Avis clients</h2>
+      <div class="reviews">
+        <div class="review"><div class="stars">★★★★★</div><p><em>“Professionnel, rapide et efficace.”</em></p><p style="color:#64748b">— Sophie R.</p></div>
+        <div class="review"><div class="stars">★★★★★</div><p><em>“Intervention soignée, je recommande.”</em></p><p style="color:#64748b">— Marc T.</p></div>
+        <div class="review"><div class="stars">★★★★★</div><p><em>“Très bon contact et résultat impeccable.”</em></p><p style="color:#64748b">— Claire P.</p></div>
+      </div>
+    </section>
+
+    <section id="devis" class="section">
+      <h2>Demande de devis</h2>
+      <p class="lead">Réponse rapide. Décrivez votre besoin en quelques lignes.</p>
+      <form id="formDevis">
+        <div><label for="nom">Nom</label><input id="nom" name="nom" type="text" placeholder="Votre nom" required /></div>
+        <div><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" placeholder="0634086084" required /></div>
+        <div><label for="type">Type d’intervention</label><input id="type" name="type" type="text" placeholder="Dépannage, installation…" required /></div>
+        <div><label for="message">Message</label><textarea id="message" name="message" placeholder="Décrivez brièvement le problème ou le projet" required></textarea></div>
+        <div class="form-actions">
+          <button class="btn-accent" type="submit">Envoyer ma demande</button>
+          <a class="btn-outline" href="mailto:alexandretorranopro@gmail.com?subject=Demande%20devis%20Serrurier&body=Nom%20:%0AT%C3%A9l%20:%0AType%20:%0AMessage%20:">✉️ Envoyer par e-mail</a>
+        </div>
+        <p class="lead" style="font-size:13px;color:#64748b">En cliquant sur « Envoyer », votre application mail s’ouvrira avec les informations pré-remplies.</p>
+      </form>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn-outline" href="tel:+33634086084">📞 0634086084</a>
+        <a class="btn-outline" target="_blank" rel="noopener" href="https://wa.me/33634086084">💬 WhatsApp</a>
+        <a class="btn-outline" href="mailto:alexandretorranopro@gmail.com">✉️ alexandretorranopro@gmail.com</a>
+      </div>
+    </section>
+
+    <footer>
+      <div>© Démo serrurier — 2025</div>
+      <div>Site de démonstration créé par BizUp</div>
+    </footer>
+  </div>
+
+  <div class="floating-space" aria-hidden="true"></div>
+  <div class="sticky-cta" role="region" aria-label="Actions rapides">
+    <div class="wrap">
+      <a class="whatsapp" href="https://wa.me/33634086084?text=Bonjour%2C%20j%27ai%20besoin%20d%27une%20intervention%20serrurier%20%E2%80%94%20Votre ville." target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="call" href="tel:+33634086084">📞 Appeler</a>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:"smooth", block:"start"}); }
+      });
+    });
+    const form = document.getElementById('formDevis');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const nom = encodeURIComponent(document.getElementById('nom').value.trim());
+      const tel = encodeURIComponent(document.getElementById('tel').value.trim());
+      const type  = encodeURIComponent(document.getElementById('type').value.trim());
+      const message  = encodeURIComponent(document.getElementById('message').value.trim());
+      const subject = encodeURIComponent('Demande devis — Serrurier');
+      const body = `Nom : ${nom}\nTél : ${tel}\nType : ${type}\nMessage : ${message}`;
+      const mailto = `mailto:alexandretorranopro@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>
